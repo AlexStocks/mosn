@@ -136,11 +136,7 @@ func (l *Logger) start() error {
 				l.roller.Filename = l.output
 				l.writer = l.roller.GetLogWriter()
 			} else {
-				stat, err := file.Stat()
-				if err != nil {
-					return err
-				}
-				l.create = stat.ModTime()
+				l.create = time.Now()
 				l.writer = file
 			}
 		}
