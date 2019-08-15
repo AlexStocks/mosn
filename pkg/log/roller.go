@@ -96,7 +96,7 @@ func (l Roller) GetLogWriter() io.Writer {
 }
 
 // InitDefaultRoller
-func InitDefaultRoller(roller string) (err error) {
+func InitGlobalRoller(roller string) (err error) {
 	defaultRoller, err = ParseRoller(roller)
 	return err
 }
